@@ -446,9 +446,7 @@ asyncTest("trampoline", 1, galaxy.unstar(function*(_) {var sums_ = galaxy.unstar
 		if (n % 1000 === 0) return (yield galaxy.invoke(flows, "trampoline", [_, fn], 0));
 		else return (yield (fn.__starred__0 || 0)(_));
 	}
-	var t0 = Date.now();
 	equals((yield sums(_, 100000)), 50000 * 100001);
-	console.log(Date.now() - t0);
 	start();
 }, 0));
 }, 0).call(this, function(err) {
